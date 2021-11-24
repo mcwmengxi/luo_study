@@ -1,0 +1,16 @@
+{
+  "name": "luo_study",
+  "version": "1.0.0",
+  "description": "luo_study",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev":"vuepress dev docs",
+    "docs:build":"vuepress build docs"
+  },
+  "dependencies": {
+    "vuepress": "^1.8.2"
+  },
+  "repository": "https://github.com/mcwmengxi/luo_study.git",
+  "author": "luo",
+  "license": "MIT"
+}
