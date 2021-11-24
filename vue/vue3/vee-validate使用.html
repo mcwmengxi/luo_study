@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>表单验证VeeValidate的使用 | 前端学习</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="shortcut icon" type="image/x-icon" href="./public/images/favicon.ico">
+    <meta name="description" content="学习记录">
+    
+    <link rel="preload" href="/assets/css/0.styles.c8e23b86.css" as="style"><link rel="preload" href="/assets/js/app.3b8b6c34.js" as="script"><link rel="preload" href="/assets/js/2.80784c06.js" as="script"><link rel="preload" href="/assets/js/26.6cfe2f17.js" as="script"><link rel="prefetch" href="/assets/js/10.d5f76284.js"><link rel="prefetch" href="/assets/js/11.78768944.js"><link rel="prefetch" href="/assets/js/12.08ca078b.js"><link rel="prefetch" href="/assets/js/13.abbd54bc.js"><link rel="prefetch" href="/assets/js/14.1330d641.js"><link rel="prefetch" href="/assets/js/15.26640b2d.js"><link rel="prefetch" href="/assets/js/16.0cb52233.js"><link rel="prefetch" href="/assets/js/17.acba55cc.js"><link rel="prefetch" href="/assets/js/18.ac6d4b65.js"><link rel="prefetch" href="/assets/js/19.eea50fa0.js"><link rel="prefetch" href="/assets/js/20.bcee9d3a.js"><link rel="prefetch" href="/assets/js/21.97e8eb08.js"><link rel="prefetch" href="/assets/js/22.446a4ba5.js"><link rel="prefetch" href="/assets/js/23.d86ef477.js"><link rel="prefetch" href="/assets/js/24.623b93f1.js"><link rel="prefetch" href="/assets/js/25.263c0008.js"><link rel="prefetch" href="/assets/js/27.31ef641a.js"><link rel="prefetch" href="/assets/js/28.11242388.js"><link rel="prefetch" href="/assets/js/29.59f18c4a.js"><link rel="prefetch" href="/assets/js/3.b3549bc5.js"><link rel="prefetch" href="/assets/js/4.9686c1c3.js"><link rel="prefetch" href="/assets/js/5.583d00fe.js"><link rel="prefetch" href="/assets/js/6.7a505dc8.js"><link rel="prefetch" href="/assets/js/7.ce90aef8.js"><link rel="prefetch" href="/assets/js/8.fc3b8e34.js"><link rel="prefetch" href="/assets/js/9.7eeb1501.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.c8e23b86.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">前端学习</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  概述
+</a></div><div class="nav-item"><a href="/basic/" class="nav-link">
+  基础学习文档
+</a></div><div class="nav-item"><a href="/vue/" class="nav-link router-link-active">
+  Vue学习文档
+</a></div><div class="nav-item"><a href="https://godbasin.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  被删的个人博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="http://www.godbasin.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  被删的前端游乐场
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="/faq.html" class="nav-link">
+  FAQ
+</a></div><div class="nav-item"><a href="https://gitee.com/dong-cheng/luo_study" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  概述
+</a></div><div class="nav-item"><a href="/basic/" class="nav-link">
+  基础学习文档
+</a></div><div class="nav-item"><a href="/vue/" class="nav-link router-link-active">
+  Vue学习文档
+</a></div><div class="nav-item"><a href="https://godbasin.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  被删的个人博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="http://www.godbasin.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  被删的前端游乐场
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="/faq.html" class="nav-link">
+  FAQ
+</a></div><div class="nav-item"><a href="https://gitee.com/dong-cheng/luo_study" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue类文档分类1</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Vue类文档分类2</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/vue/vue3/vee-validate使用.html" class="active sidebar-link">表单验证VeeValidate的使用</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vue/vue3/vee-validate使用.html#一、简介" class="sidebar-link">一、简介</a></li><li class="sidebar-sub-header"><a href="/vue/vue3/vee-validate使用.html#二、安装" class="sidebar-link">二、安装</a></li><li class="sidebar-sub-header"><a href="/vue/vue3/vee-validate使用.html#三、使用示例" class="sidebar-link">三、使用示例</a></li></ul></li><li><a href="/vue/vue3/vue3.html" class="sidebar-link">Vue3新增知识学习</a></li><li><a href="/vue/vue3/vue-2-1.html" class="sidebar-link">Vue类文档分类2第一篇</a></li><li><a href="/vue/vue3/vue-2-2.html" class="sidebar-link">Vue类文档分类2第二篇</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="表单验证veevalidate的使用"><a href="#表单验证veevalidate的使用" class="header-anchor">#</a> 表单验证VeeValidate的使用</h1> <h2 id="一、简介"><a href="#一、简介" class="header-anchor">#</a> 一、简介</h2> <p>VeeValidate 是专用于 Vue.js 的验证库.</p> <div class="language- extra-class"><pre><code>特点： 
+基于模板的验证;
+提供了许多开箱即用的验证规则;
+一流的本地化支持;
+可以验证 HTML5 input 输入框和自定义 Vue 组件;
+自定义规则和错误消息.
+</code></pre></div><h2 id="二、安装"><a href="#二、安装" class="header-anchor">#</a> 二、安装</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">//Vue3中使用</span>
+yarn add vee<span class="token operator">-</span>validate@next
+</code></pre></div><h2 id="三、使用示例"><a href="#三、使用示例" class="header-anchor">#</a> 三、使用示例</h2> <p>注册From，Filed组件,定义校验规则提供给vee-validate组件使用</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span>Form<span class="token punctuation">,</span>Field<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vee-validate'</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+   components<span class="token operator">:</span><span class="token punctuation">{</span>
+     Form<span class="token punctuation">,</span>
+     Field
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Validator function</span>
+    <span class="token function">isRequired</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> value <span class="token operator">?</span> <span class="token boolean">true</span> <span class="token operator">:</span> <span class="token string">'This field is required'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>使用 Form,Field组件，使用 vee-validate-schema 校验规则验证表单</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Form</span> <span class="token attr-name">v-slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>{ errors }<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Field</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>field<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:rules</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>isRequired<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>{{ errors.field }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Form</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>表单使用Form组件，把input改成 Field 组件，默认解析成input
+Field 添加name属性，作用是指定使用schema中哪个校验规则
+Form 添加 v-slot=&quot;{errors}&quot; 使用作用域插槽暴露 errors 错误对象
+通过 errors['校验规则名称'] 取出错误信息，有则显示，无即隐藏</p> <p><strong>校验自定义组件my-checkbox</strong>
+Field 的 as 属性可以指定为其他标签，也可指定为组件。
+但是组件需要支持 v-model 否则校验不会触发。</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Form</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>form<span class="token punctuation">&quot;</span></span> <span class="token attr-name">:validation-schema</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>schema<span class="token punctuation">&quot;</span></span> <span class="token attr-name">v-slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>{errors}<span class="token punctuation">&quot;</span></span> 
+  <span class="token attr-name">&lt;Field</span> <span class="token attr-name">:class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>{error:errors.password}<span class="token punctuation">&quot;</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>form.password<span class="token punctuation">&quot;</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>password<span class="token punctuation">&quot;</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>password<span class="token punctuation">&quot;</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>请输入密码<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>error<span class="token punctuation">&quot;</span></span> <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>errors.password<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>iconfont icon-warning<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>{{errors.password}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Field</span> <span class="token attr-name">as</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>my-checkbox<span class="token punctuation">&quot;</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>isAgree<span class="token punctuation">&quot;</span></span> <span class="token attr-name"><span class="token namespace">v-model:</span>modelValue</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>formInfo.isAgree<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Form</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>如何在切换登录时候<strong>清空表单和校验结果</strong>
+通过ref获取到Form
+首先需要自己手动清除数据，然后使用<code>Form</code> 组件提供 resetForm 方法对表单进行清除校验结果
+<strong>如何整体表单校验</strong> <code>Form</code> 组件提供 validate 方法对表单进行整体校验</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/vue/vue2/vue-1-2.html" class="prev">
+        Vue类文档分类1第二篇
+      </a></span> <span class="next"><a href="/vue/vue3/vue3.html">
+        Vue3新增知识学习
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.3b8b6c34.js" defer></script><script src="/assets/js/2.80784c06.js" defer></script><script src="/assets/js/26.6cfe2f17.js" defer></script>
+  </body>
+</html>
