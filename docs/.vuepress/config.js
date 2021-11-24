@@ -1,5 +1,5 @@
 module.exports = {
-    // base: '/luo_study/',
+    base: '/luo_study/',
     /* 基础虚拟路径 */
     // dest: 'docs/dist', /* 打包文件基础路径, 在命令所在目录下 */
     title: '前端学习', // 标题
