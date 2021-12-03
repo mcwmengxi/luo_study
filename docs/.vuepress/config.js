@@ -50,7 +50,7 @@ module.exports = {
                         "/basic/css/居中和BFC.md",
                         "/basic/css/动画.md", 
                         "/basic/css/圣杯与双飞翼布局.md", 
-                        "/basic/css/媒体查询 .md", 
+                        "/basic/css/媒体查询.md", 
                         "/basic/css/flex.md"
                     ]
                 },
