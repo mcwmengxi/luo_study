@@ -33,7 +33,17 @@ module.exports = {
         ],
         // 左侧导航菜单配置
         sidebar: {
-            "/basic/": [{
+            "/basic/": [
+                
+                {
+                    title: "基础学习之html", // 菜单名
+                    collapsable: true, // 是否支持折叠菜单
+                    children: [
+                        "/basic/html/html.md",
+                        "/basic/html/HTML+CSS.md"
+                    ]
+                },
+                {
                     title: "基础学习之css", // 菜单名
                     collapsable: true, // 是否支持折叠菜单
                     children: [
@@ -78,6 +88,14 @@ module.exports = {
                                 '/basic/typescript/chapter2/6_other',
                             ]
                         },
+                        {
+                            title:"TypeScript学习笔记",
+                            children:[
+                                '/basic/typescript/typescript学习/01 typescript简介.md',
+                                '/basic/typescript/typescript学习/02 typescript基础入门.md',
+                                '/basic/typescript/typescript学习/03 typescript面向对象.md',
+                            ]
+                        }
                     ]
                 },
             ],
