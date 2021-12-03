@@ -36,12 +36,24 @@ module.exports = {
             "/basic/": [{
                     title: "基础学习之css", // 菜单名
                     collapsable: true, // 是否支持折叠菜单
-                    children: ["/basic/css/basic-1-1.md", "/basic/css/basic-1-2.md"]
+                    children: [
+                        "/basic/css/居中和BFC.md",
+                        "/basic/css/动画.md", 
+                        "/basic/css/圣杯与双飞翼布局.md", 
+                        "/basic/css/媒体查询 .md", 
+                        "/basic/css/flex.md"
+                    ]
                 },
                 {
                     title: "基础学习之javascript", // 菜单名
                     collapsable: true, // 是否支持折叠菜单
-                    children: ["/basic/javascript/basic-1-1.md", "/basic/javascript/basic-1-2.md"]
+                    children: [
+                        "/basic/javascript/数据类型.md",
+                         "/basic/javascript/理解对象.md",
+                         "/basic/javascript/原型与继承.md",
+                         "/basic/javascript/函数进阶.md",
+                         "/basic/javascript/类.md"
+                        ]
                 },
                 {
                     title: 'TypeScript快速上手',
@@ -77,7 +89,7 @@ module.exports = {
                 {
                     title: "Vue类文档分类2", // 菜单名
                     collapsable: true, // 是否支持折叠菜单
-                    children: ["/vue/vue3/vee-validate使用.md", "/vue/vue3/vue3.md", "/vue/vue3/vue-2-1.md", "/vue/vue3/vue-2-2.md"]
+                    children: [ "/vue/vue3/vue3基础.md", "/vue/vue3/vue新特性.md","/vue/vue3/vee-validate使用.md",]
                 }
             ]
         }
