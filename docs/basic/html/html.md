@@ -3,6 +3,7 @@ title: html
 ---
 ## URL地址的组成部分及作用
 http://www.ceshi.com:80/test/test.html?par1=val1&par2=val2#p
+
 http:// 告诉服务器用什么约定和客户端进行通信
 www.ceshi.com 域名，浏览器会自动解析服务器地址，要请求哪个服务器。
 :80 端口号

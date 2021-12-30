@@ -2,9 +2,9 @@
 home: true
 # heroImage: /hero.png
 heroText: Luo的个人笔记
-tagline: Hero 副标题
+# tagline: Hero 副标题
 actionText: 快速阅读 →
-actionLink: /basic/javascript/basic-1-1.md
+actionLink: /basic/html/html.md
 features:
   - title: 基础学习文档
     details: 基础学习文档描述。

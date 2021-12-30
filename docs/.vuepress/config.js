@@ -99,17 +99,30 @@ module.exports = {
                     ]
                 },
             ],
-            "/vue/": [{
-                    title: "Vue类文档分类1", // 菜单名
-                    collapsable: true, // 是否支持折叠菜单
-                    children: ["/vue/vue2/vue-1-1.md", "/vue/vue2/vue-1-2.md"]
-                },
-                {
-                    title: "Vue类文档分类2", // 菜单名
-                    collapsable: true, // 是否支持折叠菜单
-                    children: [ "/vue/vue3/vue3基础.md", "/vue/vue3/vue新特性.md","/vue/vue3/vee-validate使用.md",]
-                }
-            ]
+            "/vue/":[
+              {
+                title: "Vue2文档", // 菜单名
+                collapsable: true, // 是否支持折叠菜单
+                children: [ "/vue/vue2/vue01.md","/vue/vue2/vue02.md","/vue/vue2/vue项目学习.md",]
+              },
+              {
+                title: "Vue3文档", // 菜单名
+                collapsable: true, // 是否支持折叠菜单
+                children: [ "/vue/vue3/vue3基础.md","/vue/vue3/vee-validate使用.md","/vue/vue3/vue3新特性.md",]
+              },
+            ],
+            "/other/":[
+              {
+                title: "项目复杂场景", // 菜单名
+                collapsable: true, // 是否支持折叠菜单
+                children: [ "/other/project/project.md",]
+              },
+              {
+                title: "项目发布部署", // 菜单名
+                collapsable: true, // 是否支持折叠菜单
+                children: [ "/other/ecs/vue项目部署.md",]
+              }
+            ],
         }
     },
     head: [

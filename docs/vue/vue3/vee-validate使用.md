@@ -1,4 +1,6 @@
 # 表单验证VeeValidate的使用
+
+
 ## 一、简介
 
 VeeValidate 是专用于 Vue.js 的验证库.

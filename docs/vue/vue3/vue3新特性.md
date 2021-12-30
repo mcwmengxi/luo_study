@@ -1,11 +1,5 @@
 ---
-title: Vue3新增知识学习
-date: 2021-11-21 
-author: luo
-img: https://statics.sh1a.qingstor.com/2018/10/08/1.jpg
-categories: 前端
-tags:
-  - Vue3
+title: Vue3新特性
 ---
 
 ## Vue 3.0
